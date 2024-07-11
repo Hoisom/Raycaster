@@ -173,7 +173,6 @@ def main():
             )
 
         dt, move_speed, rot_speed = get_dt(dt, 60, clock)
-        print(dt, move_speed, rot_speed)
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w]:
