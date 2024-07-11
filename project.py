@@ -52,7 +52,6 @@ def main():
     win_width, win_height = (1024, 512)
     pygame.init()
     screen = pygame.display.set_mode((win_width, win_height))
-    pygame.display.set_caption("Raycaster")
 
     pos_x, pos_y = 22, 12
     dir_x, dir_y = -1, 0
@@ -91,6 +90,7 @@ def main():
 
     running = True
     while running:
+        pygame.display.set_caption(f"Raycaster - FPS: {clock.get_fps():.0f}")
         for i in pygame.event.get():
             if i.type == pygame.QUIT:
                 running = False
@@ -173,6 +173,7 @@ def main():
             )
 
         dt, move_speed, rot_speed = get_dt(dt, 60, clock)
+        print(dt, move_speed, rot_speed)
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w]:
@@ -201,6 +202,7 @@ def main():
             old_plane_x = plane_x
             plane_x = plane_x * math.cos(rot_speed) - plane_y * math.sin(rot_speed)
             plane_y = old_plane_x * math.sin(rot_speed) + plane_y * math.cos(rot_speed)
+
 
         pygame.display.update()
     pygame.quit()
