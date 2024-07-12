@@ -95,7 +95,10 @@ def main():
             if i.type == pygame.QUIT:
                 running = False
 
-        screen.fill("black")
+        screen.fill("black", pygame.Rect(0, 0, win_width, win_height / 2))
+        screen.fill(
+            (25, 25, 25), pygame.Rect(0, win_height / 2, win_width, win_height / 2)
+        )
 
         rays = win_width
         for i in range(rays):
@@ -201,7 +204,6 @@ def main():
             old_plane_x = plane_x
             plane_x = plane_x * math.cos(rot_speed) - plane_y * math.sin(rot_speed)
             plane_y = old_plane_x * math.sin(rot_speed) + plane_y * math.cos(rot_speed)
-
 
         pygame.display.update()
     pygame.quit()
