@@ -3,7 +3,7 @@
 
 ## Overview
 
-This project is a raycaster engine, which is a technique used to display pseudo-3D graphics. It uses rays sent out from a character to interact with the surroundings. Depending on the length of this ray, it will draw a line on screen, following the fact that things that are further away appear smaller. This technique is most widely known to be used by Wolfenstein 3D in 1992. 
+This project is built using pygame and is a raycaster engine, which is a technique used to display pseudo-3D graphics. It uses rays sent out from a character to interact with the surroundings. Depending on the length of this ray, it will draw a line on screen, following the fact that things that are further away appear smaller. This technique is most widely known to be used by Wolfenstein 3D in 1992. 
 
 ## Rays
 The player is represented by a coordinate (E.g. (203, 127)) representing their pixel position on screen (which can be manipulated using the W key for forwards and S for backwards). The player also has a rotation (controlled with A and D). This rotation is where the player is facing, but they are also able to see 33 degrees to the left and right of this, for a 66 degree field of view. Within this FOV, hundreds of invisible lines moving outwards are fired, originating from the player. These are called "rays". When this ray interacts with something, such as a wall, the length of that ray is returned and a corresponding line is drawn on screen. This line spans from the top to the bottom of the screen, and lines are drawn from left to right. 
